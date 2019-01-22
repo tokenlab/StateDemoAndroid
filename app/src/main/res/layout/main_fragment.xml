@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_margin="30dp"
+            android:paddingBottom="100dp"
+            tools:context=".MainFragment"
+            android:orientation="vertical">
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:gravity="center_horizontal"
+                  android:layout_margin="20dp"
+                  android:text="StateDemo"/>
+
+        <EditText android:id="@+id/editText"
+                  android:layout_width="150dp"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="20dp"
+                  android:inputType="text"/>
+
+        <TextView android:id="@+id/textView"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="20dp"
+                  android:text="defaultText"/>
+
+        <Button android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="apply"/>
+
+        <com.machioni.statedemo.CustomView
+                android:id="@+id/customView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <com.machioni.statedemo.CustomView
+                android:id="@+id/customView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</ScrollView>
