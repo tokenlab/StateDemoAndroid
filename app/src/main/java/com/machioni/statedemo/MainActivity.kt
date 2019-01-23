@@ -9,6 +9,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportFragmentManager.beginTransaction().add(R.id.container, MainFragment.newInstance()).commit()
+        //se o bundle nao for null, significa que o android está recriando esta activity, e irá recriar tambem
+        // o fragment, portanto nao precisamos adicioná-lo novamente.
+        if(savedInstanceState == null)
+            supportFragmentManager.beginTransaction().add(R.id.container, MainFragment.newInstance()).commit()
     }
 }
