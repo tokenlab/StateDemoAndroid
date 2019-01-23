@@ -1,18 +1,17 @@
 package com.machioni.statedemo
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.evernote.android.state.State
 import kotlinx.android.synthetic.main.main_fragment.*
-
 
 class MainFragment : Fragment() {
 
-    val stringKey = "stringkey"
-    var string: String? = null
+    @State
+    var string1: String? = null
 
     companion object {
         fun newInstance() = MainFragment()
@@ -25,16 +24,7 @@ class MainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        if(savedInstanceState != null) {
-            string = savedInstanceState.getString(stringKey)
-        }
-
-        button1.setOnClickListener { string = editText.text.toString() }
-        button2.setOnClickListener { textView.text = string }
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        outState.putString(stringKey, string)
-        super.onSaveInstanceState(outState)
+        button1.setOnClickListener { string1 = editText.text.toString() }
+        button2.setOnClickListener { textView.text = string1 }
     }
 }

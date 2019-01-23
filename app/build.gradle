@@ -1,8 +1,11 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+androidExtensions {
+    experimental = true
+}
 
 android {
     compileSdkVersion 28
@@ -31,7 +34,12 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0-beta01'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0-beta01'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0'
+
+    implementation "com.evernote:android-state:1.4.1"
+    kapt "com.evernote:android-state-processor:1.4.1"
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+
 }
